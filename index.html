@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page of My Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            position: relative;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+            margin-left: 300px; /* Adds space for the left panel */
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Left Panel */
+        .left-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .left-panel a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .left-panel a:hover {
+            background-color: #4CAF50;
+            border-radius: 5px;
+        }
+
+        /* Circular Dial */
+        .circle-dial {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 50px;
+        }
+        .circle-dial a {
+            position: absolute;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .circle-dial a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        /* Position each link on the circle */
+        .home { top: 20px; left: 50%; transform: translateX(-50%); }
+        .skills { top: 50%; left: 80%; transform: translateY(-50%) translateX(-50%); }
+        .news { bottom: 20px; left: 50%; transform: translateX(-50%); }
+        .profile { top: 50%; left: 20%; transform: translateY(-50%) translateX(-50%); }
+        .message { top: 10%; left: 10%; transform: translateY(-50%) translateX(-50%); }
+        .notice { bottom: 10%; left: 80%; transform: translateY(-50%) translateX(-50%); }
+
+        .section-title {
+            color: #4CAF50;
+            text-decoration: underline;
+        }
+
+        /* Quick News Box */
+        .quick-news {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 250px;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .quick-news h3 {
+            font-size: 18px;
+            margin-top: 0;
+        }
+        .quick-news ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .quick-news ul li {
+            margin-bottom: 10px;
+        }
+        .quick-news a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .quick-news a:hover {
+            text-decoration: underline;
+        }
+
+        /* Profile, Logout, Settings Button Section */
+        .top-right-buttons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 20px; /* Horizontal gap between buttons */
+        }
+        .top-right-buttons a {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 8px 12px; /* Smaller padding for smaller size */
+            border-radius: 50%;
+            text-decoration: none;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px; /* Smaller font size */
+        }
+        .top-right-buttons a:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Left Panel -->
+<div class="left-panel">
+    <h3>Navigation</h3>
+    <a href="#home">Home</a>
+    <a href="#skills">Skills</a>
+    <a href="#news">News</a>
+    <a href="#profile">Profile</a>
+    <a href="#message">Message</a>
+    <a href="#notice">Notice</a>
+</div>
+
+<header>
+    <h1>Welcome to My Web Page</h1>
+</header>
+
+<!-- Top Right Buttons -->
+<div class="top-right-buttons">
+    <a href="#profile" class="profile-btn"><span class="icon">👤</span></a>
+    <a href="#logout" class="logout-btn"><span class="icon">🚪</span></a>
+    <a href="#settings" class="settings-btn"><span class="icon">⚙️</span></a>
+</div>
+
+<!-- Circular Dial -->
+<div class="circle-dial">
+    <a href="#home" class="home">Home</a>
+    <a href="#skills" class="skills">Skills</a>
+    <a href="#news" class="news">News</a>
+    <a href="#profile" class="profile">Profile</a>
+    <a href="#message" class="message">Message</a>
+    <a href="#notice" class="notice">Notice</a>
+</div>
+
+<!-- Sections -->
+<section id="home">
+    <h2 class="section-title">Home</h2>
+    <p>Welcome to my homepage! This is where you can find all the latest information about me.</p>
+</section>
+<style>
+  .shift-left {
+    margin-left: 280px; /* Move 20px to the left */
+  }
+</style>
+<img src="Alok.jpg" alt="MyPhoto" width="300" height="800" class="shift-left">
+
+<section id="Introduction">
+    <h2 class="section-title">Introduction</h2>
+   
+        <p>Hey, I’m Alok Raj
+A Computer Science student at the University of Engineering and Management, Kolkata, with a curious mind and a constant urge to grow.
+
+<p>I may not have it all figured out yet, but I believe in learning step by step, building my skills, and discovering where my true potential lies. I’m exploring the world of tech — from coding to data, from logic to creativity — and trying to find what clicks with me the most.</p>
+<p>
+I enjoy working on small ideas that teach me big lessons. Every bug I fix, every concept I understand, pushes me one step forward.</p>
+
+<p>Right now, I’m not trying to be perfect — just better than I was yesterday.
+</p>
+        
+    
+</section>
+
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <ul>
+        <li>HTML & CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+	<li>C/C++</li>
+	<li>DSA</li>
+	<li>Machine learning</li>
+        <li>Web Development</li>
+        <li>UI/UX Design</li>
+    </ul>
+</section>
+
+<section id="news">
+    <h2 class="section-title">News</h2>
+    <p>Stay tuned for the latest updates on my projects and news related to technology and development!</p>
+</section>
+
+<section id="profile">
+    <h2 class="section-title">Profile</h2>
+    <p>This is a brief description of my professional background, experience, and interests.</p>
+</section>
+
+<section id="message">
+    <h2 class="section-title">Message</h2>
+    <p>If you would like to contact me, feel free to send me a message through the contact form or email!</p>
+</section>
+
+<section id="notice">
+    <h2 class="section-title">Notice</h2>
+    <p>Here you can find any important notices or announcements related to my work or website updates.</p>
+</section>
+
+<!-- Quick News Box -->
+<div class="quick-news">
+    <h3>Quick News</h3>
+    <ul>
+        <li><a href="#">New Project Launch</a></li>
+        <li><a href="#">Updated Portfolio</a></li>
+        <li><a href="#">Tech Event Next Week</a></li>
+    </ul>
+</div>
+
+<footer>
+    <p>&copy; 2025 My Web Page</p>
+</footer>
+
+</body>
+</html>
